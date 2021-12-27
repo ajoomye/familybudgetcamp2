@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% block title %} {% endblock %}
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+
+{% block header %} {% endblock %}
+<!-- Logo and Navigation Bar-->
+    {% block nav %}
+    <nav>
+        <div class="navcontainer" style="margin:auto;">
+            <a href="/"><div class="nav button">
+                <p>Home</p>
+            </div></a>
+			<a href="/Expenses"><div class="nav button">
+                <p>Expenses</p>
+            </div></a>
+			<a href="/Payers"><div class="nav button">
+                <p>Payers</p>
+            </div></a>
+			<a href="/Moneypot"><div class="nav button">
+                <p>Moneypot</p>
+            </div></a>
+
+        </div>
+    </nav>
+    {% endblock %}
+
+    <!-- Contents -->
+  <div class="content" style="display:block; margin:0 auto;">
+    {% block content %} {% endblock %}
+  </div>
+</body>
+</html>

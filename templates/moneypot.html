@@ -1,0 +1,54 @@
+<!-- Snapchat
+page created: 14/11/19
+Last page update: 19/11/2019
+-->
+
+{% extends 'headerFooter.html' %}
+
+  {% block title %} <title>Home</title> {% endblock %}
+
+
+<body>
+
+{% block header %}
+<header style="text-align:center;">
+		<p style="font-size:x-large">Joomye/Kinoo Family Camp 2021</p>
+</header>
+{% endblock %}
+    <!-- Contents -->
+{% block content %}
+<br>
+<p><b>Total amount spent: Rs {{totalspent}}</b></p>
+<p><b>Cost per person: Rs {{costperperson}}</b></p>
+    <div class="contentdevices" style="margin:auto;">
+    	<table width="1000" border="1">
+      <tbody>
+        <tr>
+        {% for header in headings %}
+          <th>{{ header }}</th>
+        {% endfor %}
+        </tr>
+
+        {% for item in data %}
+        <tr>
+          <td>{{ item[0] }}</td>
+          <td>{{ item[1] }}</td>
+          <td>{{ item[2] }}</td>
+          <td>{{ item[3] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+
+    {% for message in messages %}
+     <p><b>{{message}}</b></p>
+    {% endfor %}
+
+
+
+{% endblock %}
+
+
+</body>
+</html>

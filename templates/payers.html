@@ -1,0 +1,60 @@
+<!-- Snapchat
+page created: 14/11/19
+Last page update: 19/11/2019
+-->
+
+{% extends 'headerFooter.html' %}
+
+  {% block title %} <title>Home</title> {% endblock %}
+
+<body>
+
+{% block header %}
+<header style="text-align:center;">
+		<p style="font-size:x-large">Joomye/Kinoo Family Camp 2021</p>
+</header>
+{% endblock %}
+
+    <!-- Contents -->
+{% block content %}
+<br>
+    <div class="form" style="height: 400px; width: 400px; display:block; margin:auto;">
+  	  <form method="POST" style="margin:auto;">
+        <strong>Add Payer</strong>
+         <br>
+         <br>
+         <br>
+  	    <label for="Payer">Payer's name</label>
+        <input type="text" id="Payer" name="Payer">
+
+        <label for="Dependent">Number of Dependents</label>
+        <input type="text" id="Dependent" name="Dependent">
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="contentdevices">
+    	<table width="1000" border="1">
+      <tbody>
+        <tr>
+        {% for header in headings %}
+          <th>{{ header }}</th>
+        {% endfor %}
+        </tr>
+
+        {% for item in data %}
+        <tr>
+          <td>{{ item[0] }}</td>
+          <td>{{ item[1] }}</td>
+          <td>{{ item[2] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+    </div>
+{% endblock %}
+
+</body>
+</html>

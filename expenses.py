@@ -49,7 +49,7 @@ def my_form_post():
     payernew = request.form.get('payer')
     print(payernew)
 
-    amountnew=int(amountnew)
+    amountnew=float(amountnew)
 
     with open('expenses.json', 'r+') as p:
         data = p.read()

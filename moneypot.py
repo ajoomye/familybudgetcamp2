@@ -21,7 +21,7 @@ def list1():
     records = json.loads(data)
 
     for i in records['expenses']:
-        totalspent += int(i['Total amount'])
+        totalspent += float(i['Total amount'])
 
 
     with open('payers.json', 'r+') as p:
